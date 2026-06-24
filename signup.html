@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun — Aether Studio</title>
+    
+    <!-- Real Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK Compat -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body class="light-glass-theme login-page-body">
+    
+    <!-- Ambient Light/Background Orbs -->
+    <div class="ambient-glow orb-indigo"></div>
+    <div class="ambient-glow orb-teal"></div>
+
+    <div class="login-container">
+        <div class="login-card glass-card premium-glass hover-tilt">
+            <div class="login-header">
+                <a href="index.html" class="nav-logo">
+                    <span class="logo-accent">✦</span> Aether<span class="weight-light">Studio</span>
+                </a>
+                <h2>Buat Akun Baru</h2>
+                <p>Mulai perjalanan kreatif produk digital Anda bersama kami</p>
+            </div>
+
+            <!-- Feedback Message Container -->
+            <div id="authFeedback" class="auth-feedback"></div>
+
+            <form id="signupForm" class="login-form">
+                <div class="form-group">
+                    <label for="signupEmail">Alamat Email</label>
+                    <input type="email" id="signupEmail" class="glass-input" placeholder="nama@email.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Kata Sandi</label>
+                    <div class="input-password-wrapper">
+                        <input type="password" id="signupPassword" class="glass-input" placeholder="Minimal 6 karakter" required autocomplete="new-password">
+                        <button type="button" class="toggle-password-btn">Lihat</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Konfirmasi Kata Sandi</label>
+                    <div class="input-password-wrapper">
+                        <input type="password" id="confirmPassword" class="glass-input" placeholder="Ulangi kata sandi" required autocomplete="new-password">
+                        <button type="button" class="toggle-password-btn">Lihat</button>
+                    </div>
+                </div>
+                
+                <button type="submit" id="signupSubmitBtn" class="btn-primary-glow btn-block">Buat Akun Saya</button>
+            </form>
+
+            <div class="login-footer" style="margin-top: 24px;">
+                <span>Sudah memiliki akun? <a href="login.html" class="signup-link">Masuk</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
