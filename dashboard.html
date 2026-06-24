@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Klien — Aether Studio</title>
+    
+    <!-- Real Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK Compat -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body class="light-glass-theme" style="padding-top: 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    
+    <!-- Ambient Light/Background Orbs -->
+    <div class="ambient-glow orb-indigo" style="top: 10%; right: 10%"></div>
+    <div class="ambient-glow orb-teal" style="bottom: 10%; left: 10%"></div>
+
+    <div class="login-container" style="max-width: 600px;">
+        <div class="login-card glass-card premium-glass hover-tilt">
+            <div class="login-header" style="text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.6); padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <a href="index.html" class="nav-logo">
+                        <span class="logo-accent">✦</span> Aether<span class="weight-light">Studio</span>
+                    </a>
+                    <button id="logoutBtn" class="btn-glass-secondary" style="padding: 6px 14px; font-size: 0.8rem;">Keluar</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <span class="glass-badge" style="margin-bottom: 15px; display: inline-block;">✦ Akses Portal Klien Aktif</span>
+                <h1 style="font-size: 2rem; margin-bottom: 10px;">Selamat Datang Kembali!</h1>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">
+                    Anda berhasil masuk sebagai <strong id="userEmailDisplay" style="color: var(--accent-primary);">Memuat data...</strong>
+                </p>
+
+                <div class="glass-card" style="padding: 20px; background: rgba(255, 255, 255, 0.25); margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Aktivitas Projek Terbaru</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Saat ini Anda tidak memiliki draf pengerjaan projek aktif. Ingin berkonsultasi mengenai rencana pengerjaan baru?</p>
+                </div>
+
+                <div style="display: flex; gap: 14px;">
+                    <a href="index.html#portfolio" class="btn-primary-glow" style="flex: 1; text-align: center; text-decoration: none;">Eksplorasi Layanan</a>
+                    <a href="index.html#contact" class="btn-glass-secondary" style="flex: 1; text-align: center; text-decoration: none;">Hubungi Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
