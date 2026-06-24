@@ -3,474 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Studio — Jasa Desain Premium & Produk Digital</title>
-    
-    <!-- Real Google Fonts: Space Grotesk (Headings) & Plus Jakarta Sans (Body) -->
+    <title>]BagiPrompt.id - Daftar Prompt by Anonym</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 </head>
-<body class="light-glass-theme">
-    
-    <!-- Ambient Light/Background Orbs -->
-    <div class="ambient-glow orb-indigo"></div>
-    <div class="ambient-glow orb-teal"></div>
-    <div class="ambient-glow orb-pink"></div>
-
-    <!-- Header & Navigation -->
-    <header class="glass-navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-accent">✦</span> Aether<span class="weight-light">Studio</span>
-            </a>
-            
-            <!-- Desktop Menu -->
-            <nav class="nav-menu">
-                <a href="#hero" class="nav-link active" data-section="hero">Beranda</a>
-                <div class="nav-dropdown">
-                    <span class="nav-link">Layanan <span class="arrow-icon">▾</span></span>
-                    <div class="dropdown-menu glass-panel">
-                        <a href="#portfolio">UI/UX Design</a>
-                        <a href="#portfolio">Branding & Logo</a>
-                        <a href="#portfolio">Web Development</a>
-                    </div>
+<body>
+    <nav class="navbar glass">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">bagiprompt.id</a>
+            <div class="nav-menu">
+                <a href="#gallery">Jelajahi</a>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Cari prompt...">
                 </div>
-                <a href="#portfolio" class="nav-link" data-section="portfolio">Portofolio</a>
-                <a href="#pricing" class="nav-link" data-section="pricing">Harga</a>
-                <a href="#about" class="nav-link" data-section="about">Tentang</a>
-                <a href="#contact" class="nav-link" data-section="contact">Hubungi</a>
-            </nav>
-
-            <div class="nav-right">
-                <a href="login.html" class="btn-text">Masuk</a>
-                <a href="#contact" class="btn-glass-cta">Konsultasi</a>
-                
-                <!-- Hamburger Mobile Menu Trigger -->
-                <button class="mobile-toggle-btn" aria-label="Toggle Menu">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                </button>
+                <button id="theme-toggle" class="btn-icon">Mode</button>
+                <div id="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Mobile Menu Glass Overlay -->
-        <div class="mobile-menu-overlay glass-overlay">
-            <nav class="mobile-nav-links">
-                <a href="#hero" class="mobile-menu-link">Beranda</a>
-                <a href="#portfolio" class="mobile-menu-link">Portofolio</a>
-                <a href="#pricing" class="mobile-menu-link">Layanan & Harga</a>
-                <a href="#about" class="mobile-menu-link">Tentang</a>
-                <a href="#contact" class="mobile-menu-link">Hubungi</a>
-                <div class="mobile-menu-actions">
-                    <a href="login.html" class="mobile-menu-link btn-text">Masuk</a>
-                    <a href="#contact" class="btn-primary-glow text-center">Konsultasi Gratis</a>
-                </div>
-            </nav>
+    <header class="hero">
+        <div class="container">
+            <h1>Koleksi Prompt AI Berkualitas</h1>
+            <p>Temukan dan gunakan prompt terbaik untuk proyek kreatifmu</p>
+            <div class="tag-cloud" id="tag-cloud">
+                <!-- Tag akan muncul di sini -->
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section reveal-section">
-        <div class="hero-container">
-            <div class="hero-content glass-card premium-glass">
-                <div class="badge-container">
-                    <span class="glass-badge">✨ Desain Digital Premium & Eksklusif</span>
-                </div>
-                <h1 class="hero-headline">
-                    Mengubah Ide Menjadi <br>
-                    <span class="gradient-text">Karya Visual Menakjubkan</span>
-                </h1>
-                <p class="hero-subheadline">
-                    Kami membantu startup, kreator, dan bisnis premium meningkatkan nilai produk mereka melalui UI/UX yang intuitif, branding berkelas, dan website yang sangat responsif.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn-primary-glow">Lihat Portofolio</a>
-                    <a href="#pricing" class="btn-glass-secondary">Pesan Sekarang</a>
-                </div>
-
-                <!-- Animated Stats Counter -->
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3 class="stat-number" data-target="150">0</h3>
-                        <p class="stat-label">Projek Selesai</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <h3 class="stat-number" data-target="98">0</h3>
-                        <p class="stat-label">% Kepuasan Klien</p>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <h3 class="stat-number" data-target="24">0</h3>
-                        <p class="stat-label">Produk Rilis</p>
-                    </div>
-                </div>
-            </div>
+    <section id="gallery" class="container">
+        <div class="filter-bar">
+            <select id="sort-dropdown" class="glass">
+                <option value="newest">Terbaru</option>
+                <option value="popular">Terpopuler</option>
+                <option value="trending">Trending</option>
+            </select>
         </div>
+        <div class="grid" id="prompt-grid">
+            <!-- Kartu prompt akan muncul di sini -->
+        </div>
+        <div id="loading-trigger" class="loading-text">Memuat lebih banyak...</div>
     </section>
 
-    <!-- Portfolio Gallery Section -->
-    <section id="portfolio" class="portfolio-section reveal-section">
-        <div class="section-header">
-            <span class="section-subtitle">Galeri Karya</span>
-            <h2 class="section-title">Portofolio Pilihan</h2>
-            <p class="section-description">Koleksi karya terbaik kami dalam mendesain produk digital fungsional dengan keindahan visual modern.</p>
-        </div>
-
-        <!-- Filter Buttons -->
-        <div class="filter-wrapper">
-            <div class="filter-container glass-card">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="web">Web Dev</button>
-            </div>
-        </div>
-
-        <!-- Gallery Grid -->
-        <div class="portfolio-grid">
-            <!-- Item 1 -->
-            <div class="portfolio-card glass-card hover-tilt" data-category="design">
-                <div class="portfolio-image-wrapper">
-                    <!-- placeholder 600x400, ganti dengan aset gambar portofolio asli -->
-                    <img class="portfolio-img" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23e0e7ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%234f46e5'>Aplikasi FinTech (UI/UX)</text></svg>" alt="Aplikasi FinTech">
-                    <div class="image-overlay">
-                        <span class="view-btn">Pratinjau Projek</span>
+    <!-- Modal Detail -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Preview">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <span id="modal-category" class="badge"></span>
+                    <p id="modal-desc"></p>
+                    <div class="prompt-box">
+                        <pre id="modal-text"></pre>
+                        <button id="copy-btn" class="btn btn-accent">Salin Prompt</button>
+                    </div>
+                    <div class="social-actions">
+                        <button id="like-btn" class="btn btn-outline">Suka</button>
+                        <button id="bookmark-btn" class="btn btn-outline">Simpan</button>
+                    </div>
+                    <div class="comment-section">
+                        <h3>Komentar</h3>
+                        <div id="comment-list"></div>
+                        <div class="comment-input-wrapper">
+                            <input type="text" id="comment-input" placeholder="Tulis komentar...">
+                            <button id="send-comment" class="btn btn-accent">Kirim</button>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-details">
-                    <span class="portfolio-cat">UI/UX Design</span>
-                    <h3 class="portfolio-title">Aether Pay — Fintech Mobile App</h3>
-                </div>
             </div>
-
-            <!-- Item 2 -->
-            <div class="portfolio-card glass-card hover-tilt" data-category="branding">
-                <div class="portfolio-image-wrapper">
-                    <!-- placeholder 600x400, ganti dengan aset gambar portofolio asli -->
-                    <img class="portfolio-img" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23ccfbf1'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%230d9488'>Identitas Brand (Logo)</text></svg>" alt="Identitas Brand">
-                    <div class="image-overlay">
-                        <span class="view-btn">Pratinjau Projek</span>
-                    </div>
-                </div>
-                <div class="portfolio-details">
-                    <span class="portfolio-cat">Branding</span>
-                    <h3 class="portfolio-title">Lumina Fragrance — Brand Identity</h3>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="portfolio-card glass-card hover-tilt" data-category="web">
-                <div class="portfolio-image-wrapper">
-                    <!-- placeholder 600x400, ganti dengan aset gambar portofolio asli -->
-                    <img class="portfolio-img" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23fce7f3'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23db2777'>E-Commerce Premium (Web)</text></svg>" alt="E-Commerce Premium">
-                    <div class="image-overlay">
-                        <span class="view-btn">Pratinjau Projek</span>
-                    </div>
-                </div>
-                <div class="portfolio-details">
-                    <span class="portfolio-cat">Web Dev</span>
-                    <h3 class="portfolio-title">Verdant — Premium E-Commerce Website</h3>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="portfolio-card glass-card hover-tilt" data-category="design">
-                <div class="portfolio-image-wrapper">
-                    <!-- placeholder 600x400, ganti dengan aset gambar portofolio asli -->
-                    <img class="portfolio-img" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23fef3c7'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23d97706'>SaaS Dashboard (UI/UX)</text></svg>" alt="SaaS Dashboard">
-                    <div class="image-overlay">
-                        <span class="view-btn">Pratinjau Projek</span>
-                    </div>
-                </div>
-                <div class="portfolio-details">
-                    <span class="portfolio-cat">UI/UX Design</span>
-                    <h3 class="portfolio-title">Nova Metrics — Analytics Dashboard</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom Lightbox Modal (Vanilla JS) -->
-    <div class="lightbox" id="portfolioLightbox">
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-content glass-card">
-            <img id="lightboxImage" src="" alt="Pratinjau Detail">
-            <h3 id="lightboxTitle" class="lightbox-caption"></h3>
         </div>
     </div>
-
-    <!-- Pricing / Products Section -->
-    <section id="pricing" class="pricing-section reveal-section">
-        <div class="section-header">
-            <span class="section-subtitle">Investasi Desain</span>
-            <h2 class="section-title">Harga Layanan & Paket</h2>
-            <p class="section-description">Pilih paket terbaik yang sesuai dengan skala proyek digital Anda saat ini.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <!-- Package 1 -->
-            <div class="pricing-card glass-card hover-tilt">
-                <div class="pricing-header">
-                    <span class="pkg-tier">Starter</span>
-                    <p class="pkg-desc">Sempurna untuk validasi awal produk baru Anda.</p>
-                    <div class="pkg-price-container">
-                        <span class="pkg-currency">Rp</span>
-                        <span class="pkg-price">3.499.000</span>
-                    </div>
-                </div>
-                <ul class="pkg-features">
-                    <li>✓ Desain Landing Page (1 Halaman)</li>
-                    <li>✓ 3 Banner Media Sosial</li>
-                    <li>✓ Revisi Maksimal 3 Kali</li>
-                    <li>✓ Penyerahan File Figma Lengkap</li>
-                    <li class="disabled">✗ Pengembangan Kode Website</li>
-                </ul>
-                <div class="pricing-footer">
-                    <a href="#contact" class="btn-glass-secondary btn-block text-center" data-pkg="Starter">Pilih Paket</a>
-                </div>
-            </div>
-
-            <!-- Package 2 (RECOMMENDED) -->
-            <div class="pricing-card glass-card hover-tilt recommended-package">
-                <div class="recommended-badge">Terpopuler 🔥</div>
-                <div class="pricing-header">
-                    <span class="pkg-tier">Professional</span>
-                    <p class="pkg-desc">Cocok untuk startup yang siap meluncur secara premium.</p>
-                    <div class="pkg-price-container">
-                        <span class="pkg-currency">Rp</span>
-                        <span class="pkg-price">8.999.000</span>
-                    </div>
-                </div>
-                <ul class="pkg-features">
-                    <li>✓ Desain UI/UX Lengkap (Maks. 8 Halaman)</li>
-                    <li>✓ Sistem Desain Komponen UI</li>
-                    <li>✓ Integrasi Animasi & Interaksi</li>
-                    <li>✓ Pengembangan Web Responsif (Webflow/Vanilla)</li>
-                    <li>✓ Prioritas Pendampingan Desain</li>
-                </ul>
-                <div class="pricing-footer">
-                    <a href="#contact" class="btn-primary-glow btn-block text-center" data-pkg="Professional">Pilih Paket</a>
-                </div>
-            </div>
-
-            <!-- Package 3 -->
-            <div class="pricing-card glass-card hover-tilt">
-                <div class="pricing-header">
-                    <span class="pkg-tier">Elite Custom</span>
-                    <p class="pkg-desc">Solusi total produk berskala enterprise berskala penuh.</p>
-                    <div class="pkg-price-container">
-                        <span class="pkg-price">Kustom</span>
-                    </div>
-                </div>
-                <ul class="pkg-features">
-                    <li>✓ Halaman Desain Tanpa Batas</li>
-                    <li>✓ Identitas Brand Visual Komplet</li>
-                    <li>✓ Prototipe Interaktif Tingkat Tinggi</li>
-                    <li>✓ Pengembangan Frontend React/Next.js</li>
-                    <li>✓ Kontrak Perjanjian Kerahasiaan (NDA)</li>
-                </ul>
-                <div class="pricing-footer">
-                    <a href="#contact" class="btn-glass-secondary btn-block text-center" data-pkg="Elite Custom">Hubungi Kami</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Carousel -->
-    <section class="testimonials-section reveal-section">
-        <div class="section-header">
-            <span class="section-subtitle">Ulasan Klien</span>
-            <h2 class="section-title">Apa Kata Mereka</h2>
-        </div>
-
-        <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack">
-                <!-- Testimonial Item 1 -->
-                <div class="testimonial-card glass-card">
-                    <div class="client-info">
-                        <!-- placeholder 60x60 client photo -->
-                        <img class="client-photo" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><circle cx='30' cy='30' r='30' fill='%236366f1'/></svg>" alt="Budi Prasetyo">
-                        <div>
-                            <h4 class="client-name">Budi Prasetyo</h4>
-                            <span class="client-role">Founder, Sinergi Digital</span>
-                        </div>
-                    </div>
-                    <p class="client-quote">"Aether Studio merancang ulang dashboard internal kami dengan luar biasa. Efisiensi operasional tim kami meningkat pesat berkat sistem navigasi baru."</p>
-                </div>
-
-                <!-- Testimonial Item 2 -->
-                <div class="testimonial-card glass-card">
-                    <div class="client-info">
-                        <!-- placeholder 60x60 client photo -->
-                        <img class="client-photo" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><circle cx='30' cy='30' r='30' fill='%2306b6d4'/></svg>" alt="Jessica Olivia">
-                        <div>
-                            <h4 class="client-name">Jessica Olivia</h4>
-                            <span class="client-role">Product Owner, Lumina Fragrance</span>
-                        </div>
-                    </div>
-                    <p class="client-quote">"Desain kemasan dan web e-commerce baru yang mereka rancang mendapat pujian luar biasa dari pelanggan kami di bulan pertama perilisan. Sangat direkomendasikan!"</p>
-                </div>
-
-                <!-- Testimonial Item 3 -->
-                <div class="testimonial-card glass-card">
-                    <div class="client-info">
-                        <!-- placeholder 60x60 client photo -->
-                        <img class="client-photo" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><circle cx='30' cy='30' r='30' fill='%23ec4899'/></svg>" alt="Andri Wijaya">
-                        <div>
-                            <h4 class="client-name">Andri Wijaya</h4>
-                            <span class="client-role">Tech Lead, FinTech ID</span>
-                        </div>
-                    </div>
-                    <p class="client-quote">"Detail pembiasan kaca di website kami dikembangkan dengan kode bersih dan responsif. Mereka menguasai betul aspek estetika dan sisi teknis sekaligus."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About / Profile Section -->
-    <section id="about" class="about-section reveal-section">
-        <div class="about-container glass-card premium-glass">
-            <div class="about-grid">
-                <div class="about-image-side">
-                    <!-- placeholder 400x500 bio photo -->
-                    <img class="profile-img" loading="lazy" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'><rect width='100%' height='100%' fill='%23e2e8f0'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23475569'>Foto Profil Desainer</text></svg>" alt="Aether Studio Founder">
-                </div>
-                <div class="about-text-side">
-                    <span class="section-subtitle">Di Balik Layar</span>
-                    <h2 class="about-title">Halo, Saya Rama</h2>
-                    <p class="about-bio">
-                        Seorang Desainer Produk Digital dan pengembang kreatif independen dengan pengalaman lebih dari 6 tahun. Saya memadukan keindahan material visual di dunia nyata dengan fleksibilitas interaksi web modern guna melahirkan solusi berkelas dunia.
-                    </p>
-                    <div class="skills-box">
-                        <h4 class="skills-heading">Keahlian & Perkakas Kerja</h4>
-                        <div class="skills-tags">
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">UI/UX Design</span>
-                            <span class="skill-tag">Webflow Development</span>
-                            <span class="skill-tag">Vanilla JS</span>
-                            <span class="skill-tag">CSS Refractions</span>
-                            <span class="skill-tag">Branding Visual</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Accordion Section -->
-    <section class="faq-section reveal-section">
-        <div class="section-header">
-            <span class="section-subtitle">Paling Sering Ditanyakan</span>
-            <h2 class="section-title">Jawaban atas Keraguan Anda</h2>
-        </div>
-        
-        <div class="faq-container">
-            <!-- Accordion Item 1 -->
-            <div class="faq-item glass-card">
-                <button class="faq-trigger">
-                    <span>Apakah saya akan mendapatkan file desain asli setelah projek selesai?</span>
-                    <span class="faq-icon-arrow">+</span>
-                </button>
-                <div class="faq-panel">
-                    <p>Ya, tentu saja. Anda akan menerima akses penuh ke file desain Figma utama yang terstruktur rapi, lengkap dengan semua komponen, aset gambar, panduan tipografi, serta skema warna produk Anda.</p>
-                </div>
-            </div>
-
-            <!-- Accordion Item 2 -->
-            <div class="faq-item glass-card">
-                <button class="faq-trigger">
-                    <span>Bagaimana proses pembayaran untuk pengerjaan proyek?</span>
-                    <span class="faq-icon-arrow">+</span>
-                </button>
-                <div class="faq-panel">
-                    <p>Prosedur pembayaran kami bagi menjadi dua tahap: Pembayaran awal (Down Payment) sebesar 50% untuk mengamankan slot pengerjaan, dan sisa 50% pelunasan setelah proyek disetujui penuh sebelum file diserahkan.</p>
-                </div>
-            </div>
-
-            <!-- Accordion Item 3 -->
-            <div class="faq-item glass-card">
-                <button class="faq-trigger">
-                    <span>Berapa lama waktu pengerjaan paket desain Professional?</span>
-                    <span class="faq-icon-arrow">+</span>
-                </button>
-                <div class="faq-panel">
-                    <p>Waktu pengerjaan umumnya berkisar antara 14 hingga 21 hari kerja, tergantung pada kompleksitas struktur halaman, kedalaman detail fungsionalitas, serta kecepatan umpan balik dari pihak Anda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Order Section -->
-    <section id="contact" class="contact-section reveal-section">
-        <div class="contact-container">
-            <div class="contact-card glass-card premium-glass">
-                <div class="section-header">
-                    <span class="section-subtitle">Mulailah Bersama Kami</span>
-                    <h2 class="section-title">Hubungi Kami & Pesan Layanan</h2>
-                    <p class="section-description">Isi formulir singkat di bawah ini. Tombol kirim akan mengarahkan pesan rapi secara otomatis langsung ke nomor WhatsApp kami.</p>
-                </div>
-
-                <form id="contactForm" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Nama Lengkap *</label>
-                            <input type="text" id="fullName" class="glass-input" placeholder="Nama Anda" required>
-                            <span class="validation-message" id="nameError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Layanan / Paket *</label>
-                            <select id="service" class="glass-input" required>
-                                <option value="" disabled selected>Pilih Layanan</option>
-                                <option value="Starter">Paket Starter (Rp 3.499.000)</option>
-                                <option value="Professional">Paket Professional (Rp 8.999.000)</option>
-                                <option value="Elite Custom">Paket Kustom (Konsultasi Terbuka)</option>
-                            </select>
-                            <span class="validation-message" id="serviceError"></span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="budget">Estimasi Anggaran (Rp) *</label>
-                            <input type="text" id="budget" class="glass-input" placeholder="Contoh: 8 Juta" required>
-                            <span class="validation-message" id="budgetError"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Pesan / Deskripsi Proyek *</label>
-                        <textarea id="message" rows="5" class="glass-input" placeholder="Tuliskan latar belakang bisnis Anda dan visi desain yang ingin dicapai..." required></textarea>
-                        <span class="validation-message" id="messageError"></span>
-                    </div>
-
-                    <button type="submit" class="btn-primary-glow btn-block">Kirim Pesan via WhatsApp ⚡</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <a href="#hero" class="nav-logo">
-                    <span class="logo-accent">✦</span> Aether<span class="weight-light">Studio</span>
-                </a>
-                <p class="footer-tagline">Membangun pilar estetika digital kelas atas di Indonesia.</p>
-            </div>
-            <div class="footer-links">
-                <a href="#hero">Beranda</a>
-                <a href="#portfolio">Portofolio</a>
-                <a href="#pricing">Layanan</a>
-                <a href="login.html">Area Masuk</a>
-            </div>
-            <div class="footer-meta">
-                <p>&copy; 2026 Aether Studio. Hak Cipta Dilindungi Undang-Undang.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
