@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheria — Premium Glassmorphism Experience</title>
+    
+    <!-- Non-generic Google Fonts: Space Grotesk (Headings) & Manrope (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Glowing background auras (Simulasi kedalaman ruang) -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="glass-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✦</span> Averonova
+            </a>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <div class="dropdown">
+                    <span class="nav-link dropdown-trigger">Layanan <span class="arrow">▾</span></span>
+                    <div class="dropdown-content glass-dropdown">
+                        <a href="#core">Core Engine</a>
+                        <a href="#analytics">Real-time Analytics</a>
+                        <a href="#security">Quantum Security</a>
+                    </div>
+                </div>
+                <a href="#features" class="nav-link">Fitur</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn-text">Masuk</a>
+                <a href="#" class="btn-glass-cta">Mulai Free</a>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown / Slide-in Menu -->
+        <div class="mobile-menu glass-overlay">
+            <nav class="mobile-nav-links">
+                <a href="#hero" class="mobile-link">Home</a>
+                <div class="mobile-dropdown">
+                    <span class="mobile-link mobile-dropdown-trigger">Layanan ▾</span>
+                    <div class="mobile-submenu">
+                        <a href="#core" class="mobile-sublink">Core Engine</a>
+                        <a href="#analytics" class="mobile-sublink">Real-time Analytics</a>
+                        <a href="#security" class="mobile-sublink">Quantum Security</a>
+                    </div>
+                </div>
+                <a href="#features" class="mobile-link">Fitur</a>
+                <div class="mobile-actions">
+                    <a href="login.html" class="mobile-link btn-text">Masuk</a>
+                    <a href="#" class="btn-glass-cta text-center">Mulai Free</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content glass-card premium-glass">
+                <div class="badge glass-badge"><span>✨</span> Next-Gen Platform</div>
+                <h1 class="hero-title">Estetika Spasial dengan <span class="gradient-text">Liquid Interface</span></h1>
+                <p class="hero-subtitle">Nikmati pengalaman visual kelas atas dengan antarmuka translucent, kedalaman lapisan 3D organik, dan performa tinggi tanpa kompromi.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary-glow">Eksplorasi Sekarang</a>
+                    <a href="#" class="btn-glass-secondary">Dokumentasi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2 class="section-title">Teknologi Berkelas Spasial</h2>
+            <p class="section-subtitle">Didesain presisi menggunakan simulasi pembiasan fisik untuk mendapatkan estetika kaca murni.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-card hover-glow">
+                <div class="feature-icon">💎</div>
+                <h3>Refractive Glass</h3>
+                <p>Menggunakan sistem rendering gradient halus di sisi tepi komponen untuk menciptakan efek pembiasan cahaya real-time.</p>
+            </div>
+            <div class="feature-card glass-card hover-glow">
+                <div class="feature-icon">🛡️</div>
+                <h3>Deep Layering</h3>
+                <p>Kedalaman antarmuka spasial berlapis berbasis z-index dan tingkat blur bertingkat untuk pengalaman visual premium.</p>
+            </div>
+            <div class="feature-card glass-card hover-glow">
+                <div class="feature-icon">⚡</div>
+                <h3>Saturate Contrast</h3>
+                <p>Saturasi warna latar belakang yang dioptimalkan untuk memastikan teks kontras dan nyaman dibaca di atas kaca buram.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Averonova Inc. D</p>
+            <div class="footer-links">
+                <a href="#">Privasi</a>
+                <a href="#">Ketentuan</a>
+                <a href="#">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
